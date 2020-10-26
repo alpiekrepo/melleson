@@ -22,10 +22,10 @@
             <xpath expr="//t[@name='account_invoice_line_accountable']/td[@name='account_invoice_line_name']/span[@t-field='line.name']" position="attributes">
                 <attribute name="t-field">line.product_id.name</attribute>
             </xpath>
-            <xpath expr="//tbody[@name='invoice_tbody']//tr/t[2]/td/span[@t-field='line.name']" position="attributes">
+            <xpath expr="//tr/t[2]/td/span[@t-field='line.name']" position="attributes">
                 <attribute name="t-field">line.product_id.name</attribute>
             </xpath>
-            <xpath expr="//tbody[@name='invoice_tbody']//tr/t[3]/td/span[@t-field='line.name']" position="attributes">
+            <xpath expr="//tr/t[3]/td/span[@t-field='line.name']" position="attributes">
                 <attribute name="t-field">line.product_id.name</attribute>
             </xpath>
 
