@@ -10,6 +10,7 @@
     'depends': [
         'account',
         'stock',
+        'sale',
     ],
     'data': [
         'report/account_report_templates.xml',
