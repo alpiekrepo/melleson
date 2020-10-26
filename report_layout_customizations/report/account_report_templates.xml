@@ -5,7 +5,7 @@
         <field name="inherit_id" ref="account.report_invoice_document" />
         <field name="arch" type="xml">
 
-            <xpath expr="//th[@name='invoice_date']" position="before">
+            <xpath expr="//div[@name='invoice_date']" position="before">
                 <div name="invoice_order_client_order_ref">   <strong>Referentie:</strong></div>
                 <t t-set="sale_order" t-value="o.env['sale.order'].search([('name', '=', o.invoice_origin)], limit=1)" />
                 <p class="m-0" t-field="sale_order.client_order_ref"/>
