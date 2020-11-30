@@ -6,7 +6,7 @@
                 <field name="domain">[('id', 'in', active_id.test_list)]</field>
                 <field name="name">Product inventory</field>
                 <field name="res_model">product.product</field>
-                <field name="view_id" ref="product.product_product_tree"/>
+                <!--field name="view_id" ref="product.product_product_tree"/-->
         </record>
 
         <record id="product_template_from_max_pack" model="ir.ui.view">
