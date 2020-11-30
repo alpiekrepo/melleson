@@ -12,4 +12,5 @@ class ProductProduct(models.Model):
 	@api.depends('pack_ids')
 	def _compute_max_packs(self):
 		for r in self:
-			r.max_packs = min([item.product_id.qty_available / item.qty_uom for item in r.pack_ids])
+			if r.is_pack:
+				r.max_packs = min([item.product_id.qty_available / item.qty_uom for item in r.pack_ids])
