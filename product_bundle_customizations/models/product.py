@@ -14,3 +14,5 @@ class ProductProduct(models.Model):
 		for r in self:
 			if r.is_pack:
 				r.max_packs = min([item.product_id.qty_available / item.qty_uom for item in r.pack_ids])
+			else:
+				r.max_packs = 0
