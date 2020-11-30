@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="report_invoice_document" model="ir.ui.view">
+        <field name="name">report_invoice_document_with_display_code</field>
+        <field name="inherit_id" ref="account.report_invoice_document" />
+        <field name="arch" type="xml">
+
+            <xpath expr="//th[@name='th_description']" position="replace">
+                <th name="th_default_code" class="text_left"><span>Artikelnummer</span></th>
+                <th name="th_description" class="text_left"><span>Productnaam</span></th>
+            </xpath>
+
+            <!-- 3 different cases of line.name -->
+            <xpath expr="//t[@name='account_invoice_line_accountable']/td[@name='account_invoice_line_name']/span[@t-field='line.name']" position="attributes">
+                <attribute name="t-field">line.product_id.name</attribute>
+            </xpath>
+
+            <xpath expr="//t[@t-as='line']/tr/t" position="before">
+                <td name="account_invoice_default_code">
+                    <span t-field="line.product_id.default_code" />
+                </td>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>
