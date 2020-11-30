@@ -12,14 +12,14 @@
         <record id="product_template_inherit_form" model="ir.ui.view">
             <field name="name">product.product.pack</field>
             <field name="model">product.template</field>
-            <field name="inherit_id" ref="product.product_template_only_form_view" />
+            <field name="inherit_id" ref="product.product_template_form_view"/>
             <field name="arch" type="xml">
                 <xpath expr="//page[@name='general_information']/field[@name='categ_id']" position="after">
                     <field name="max_packs"/>
                 </xpath>
-                <xpath expr="//button[@name='action_open_quants']" position="before">
+                <!--xpath expr="//button[@name='action_open_quants']" position="before">
                     <button string="test"/>
-                    <!--button type="action"
+                    <button type="action"
                                 name="action_open_quants"
                                 attrs="{'invisible':[('type', '!=', 'product')]}"
                                 class="oe_stat_button" icon="fa-cubes">
@@ -30,8 +30,8 @@
                                     </span>
                                     <span class="o_stat_text">On Hand</span>
                                 </div>
-                    </button-->
-                </xpath>
+                    </button>
+                </xpath-->
             </field>
         </record>
     </data>   
