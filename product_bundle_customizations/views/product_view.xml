@@ -18,9 +18,7 @@
             <field name="inherit_id" ref="stock.product_template_form_view_procurement_button"/>
             <field name="arch" type="xml">
                 <xpath expr="//button[@name='action_open_quants']" position="before">
-                    <button type="action"
-                                name=""
-                                class="oe_stat_button" icon="fa-cubes">
+                    <button class="oe_stat_button" icon="fa-cubes">
                                 <div class="o_field_widget o_stat_info">
                                     <span class="o_stat_value" widget="statinfo">
                                         <field name="max_packs" widget="statinfo" nolabel="1" class="mr4" string="Packs Available"/>
