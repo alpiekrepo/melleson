@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>    
-        <record model="ir.actions.act_window" id="action_get_pack_components">
-                <field name="context">{}</field>
-                <field name="domain">[('id', 'in', active_id.test_list)]</field>
-                <field name="name">Product inventory</field>
-                <field name="res_model">product.product</field>
-                <!--field name="view_id" ref="product.product_product_tree"/-->
-        </record>
-
         <record id="product_template_from_max_pack" model="ir.ui.view">
             <field name="name">product.product.pack</field>
             <field name="model">product.template</field>
@@ -27,7 +19,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//button[@name='action_open_quants']" position="before">
                     <button type="action"
-                                name="%(action_get_pack_components)d"
+                                name=""
                                 class="oe_stat_button" icon="fa-cubes">
                                 <div class="o_field_widget o_stat_info">
                                     <span class="o_stat_value" widget="statinfo">

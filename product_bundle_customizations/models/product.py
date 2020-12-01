@@ -9,22 +9,23 @@ class ProductProduct(models.Model):
 		compute="_compute_max_packs",
 	)
 
-	test_list = fields.Many2one(
+	pack_components = fields.Many2one(
 		comodel_name="product.product",
 		default=None,
 		compute="_compute_test_list",
 		store=True,
 	)
 
-	def _compute_test_list(self):
+	def _compute_pack_components(self):
 		for r in self:
 			if r.is_pack and r.pack_ids:
-				r.test_list = [item.product_id.id for item in r.pack_ids]
+				r.pack_components = [item.product_id.id for item in r.pack_ids]
 
 	@api.depends("pack_ids")
 	def _compute_max_packs(self):
 		for r in self:
-			if r.is_pack:
-				r.max_packs = min([item.product_id.qty_available / item.qty_uom for item in r.pack_ids])
+			# The virtual inventory needs to be strictly more than 0 to be shown as non 0
+			if r.is_pack and min(item.product_id.virtual_available for item in r.pack_ids) > 0: 
+				r.max_packs = min([item.product_id.virtual_available / item.qty_uom for item in r.pack_ids])
 			else:
 				r.max_packs = 0
