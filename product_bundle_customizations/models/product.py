@@ -25,7 +25,7 @@ class ProductProduct(models.Model):
 	def _compute_max_packs(self):
 		for r in self:
 			# The virtual inventory needs to be strictly more than 0 to be shown as non 0
-			if r.is_pack and min(item.product_id.virtual_available for item in r.pack_ids) > 0: 
+			if r.is_pack and min(item.qty_uom for item in r.pack_ids) > 0: 
 				r.max_packs = min([item.product_id.virtual_available / item.qty_uom for item in r.pack_ids])
 			else:
 				r.max_packs = 0
