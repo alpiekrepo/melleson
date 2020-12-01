@@ -12,7 +12,7 @@ class ProductProduct(models.Model):
 	pack_components = fields.Many2one(
 		comodel_name="product.product",
 		default=None,
-		compute="_compute_test_list",
+		compute="_compute_pack_components",
 		store=True,
 	)
 
