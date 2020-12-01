@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="kanban_template" xml:space="preserve">
+    <t t-extend="KanbanView.ColumnProgressBar">
+        <t t-jquery=".o_kanban_counter" t-operation="after">
+            <t t-if="!!widget.sumField2">
+                <div class="o_kanban_counter o_kanban_counter_side2">
+                    <div class="o_kanban_counter_side2">
+                        <b><t t-esc="widget.totalCounterValue2 || 0"/></b>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </t>
+</templates>
