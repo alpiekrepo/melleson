@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="viw_partner_form_alpiek_logistiek">
+        <field name="active" eval="True"/>
+        <field name="field_parent" eval="False"/>
+        <field name="groups_id" eval="[(6, 0, [])]"/>
+        <field ref="base.view_partner_form" name="inherit_id"/>
+        <field name="mode">extension</field>
+        <field name="model">res.partner</field>
+        <field name="name">Alpiek Logistics</field>
+        <field name="priority">99</field>
+        <field name="type">form</field>
+        <field type="xml" name="arch">
+            <xpath expr="/form/sheet/notebook/page[last()]" position="after">
+                <page name="logistic" string="Logistiek">
+                    <group>
+                        <group name="prepare_delivery" string="Klaarmaken voor verzending">
+                            <field name="alpiek_alleen_europallets"/>
+                            <field name="alpiek_hoeksteunen"/>
+                            <field name="alpiek_van_lotnummer_voorzien"/>
+                            <field name="alpiek_sticker_lotnummer"/>
+                            <field name="alpiek_fsc_code"/>
+                            <field name="alpiek_sscc_nodig"/>
+                            <field name="alpiek_aanmelding_nodig"/>
+                            <field name="alpiek_logistieke_notes"/>
+                        </group>
+                        <group name="before_delivery" string="Voor aflevering">
+                            <field name="alpiek_vervoerder"/>
+                            <field name="alpiek_levering_maandag"/>
+                            <field name="alpiek_levering_dinsdag"/>
+                            <field name="alpiek_levering_woensdag"/>
+                            <field name="alpiek_levering_donderdag"/>
+                            <field name="alpiek_levering_vrijdag"/>
+                            <field name="alpiek_levering_zaterdag"/>
+                            <field name="alpiek_levering_zondag"/>
+                            <field name="alpiek_levertijd_window"/>
+                            <field name="alpiek_heftruck"/>
+                            <field name="alpiek_laadklep"/>
+                            <field name="alpiek_palletwagen"/>
+                            <field name="alpiek_pallets_ruilen"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
