@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="sh_report_delivery_document" inherit_id="stock.report_delivery_document">
+    	<xpath expr="//div[hasclass('page')]" position="inside">
+    		<t t-if="o.do_delivernote">
+	    		<br/><strong>Delivery Note</strong>
+	    		<p t-field="o.do_delivernote"/>
+    		</t>
+    	</xpath>
+    </template>
+
+    <template id="sh_report_picking" inherit_id="stock.report_picking">
+    	<xpath expr="//div[hasclass('page')]" position="inside">
+    		<t t-if="o.do_delivernote">
+	    		<br/><strong>Delivery Note</strong>
+	    		<p t-field="o.do_delivernote"/>
+    		</t>
+    	</xpath>
+    </template>
+    
+    <template id="sh_report_quotation_order" inherit_id="sale.report_saleorder_document">
+    	<xpath expr="//div[hasclass('page')]" position="inside">
+    		<t t-if="doc.delivernote">
+    			<br/><strong>Delivery Note</strong>
+    			<p t-field="doc.delivernote"/>
+    		</t>
+    	</xpath>
+    </template>
+
+
+</odoo>
