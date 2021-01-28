@@ -46,6 +46,7 @@ class ResConfigSettings(models.TransientModel):
         "This installs the module stock_available_mrp.\n"
         "If the module mrp is not installed, this will install it "
         "too",
+        store=True,
     )
 
     stock_available_mrp_based_on = fields.Selection(
