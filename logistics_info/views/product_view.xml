@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="product_template_only_form_view">
+        <field name="name">product.template.product.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view" />
+        <field type="xml" name="arch">
+            <xpath expr="//div[./field[@name='volume']]" position="after">
+                <field name="alpiek_length" />
+                <field name="alpiek_width" />
+                <field name="alpiek_height" />
+                <field name="alpiek_amount_in_box" />
+                <field name="alpiek_number_of_boxes_per_layer" />
+                <field name="alpiek_number_of_layers_per_pallet" />
+                <field name="alpiek_weight_package_plastic_new" />
+                <field name="alpiek_weight_package_paper_new" />
+                <field name="alpiek_weight_package_al_new" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
