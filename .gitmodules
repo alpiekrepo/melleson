@@ -1,0 +1,4 @@
+[submodule "submodule-public_odoo_modules"]
+	path = submodule-public_odoo_modules
+	url = git@github.com:Alpiek-Oisterwijk/public_odoo_modules.git
+	branch = 13.0-MEL-45370-copy-picking-qty
